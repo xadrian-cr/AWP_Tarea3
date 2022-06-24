@@ -11,7 +11,7 @@
 	<groupId>com.tarea3</groupId>
 	<artifactId>tarea3</artifactId>
 	<version>1</version>
-	<name>tarea3</name>
+	<name>practica01</name>
 	<description>Tarea para practica de examen en Apelicaciones Web y Patrones</description>
 	<properties>
 		<java.version>1.8</java.version>
