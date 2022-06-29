@@ -1,7 +1,6 @@
-
 package com.tarea3.service;
 
-import Estado.EstadoDao;
+import com.tarea3.dao.EstadoDao;
 import com.tarea3.domain.Estado;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,28 +14,27 @@ public class EstadoServiceImpl implements EstadoService{
 
     //se crea en tiempo de ejecucion si no se ha creado, no requiere new
     @Autowired
-    private EstadoDao EstadoDao;
+    private EstadoDao estadoDao;
     
     @Override
     @Transactional(readOnly = true)
+    public List<Estado> getEstados(){
+        return (List<Estado>) estadoDao.findAll();
+    }
     
-    public List<Estado> getEstados() {
-        return (List<Estado>) EstadoDao.findAll();
-    }
-
     @Override
-    public void save(Estado estado) {
-        EstadoDao.save(estado);
+    public void save (Estado estado){
+        estadoDao.save(estado);
     }
-
+    
     @Override
-    public void delete(Cliente cliente) {
-        clienteDao.delete(cliente);
+    public void delete (Estado estado){
+        estadoDao.delete(estado);
     }
-
+    
     @Override
     @Transactional(readOnly = true)
-    public Cliente getCliente(Cliente cliente) {
-        return clienteDao.findById(cliente.getIdCliente()).orElse(null);
+    public Estado getEstado(Estado estado){
+        return estadoDao.findById(estado.getIdEstado()).orElse(null);
     }
 }

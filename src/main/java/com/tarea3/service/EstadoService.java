@@ -1,13 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-package com.tarea3.service;
 
-/**
- *
- * @author adria
- */
+package com.tarea3.service;
+import com.tarea3.domain.Estado;
+import java.util.List;
+
 public interface EstadoService {
     
+    
+    public List<Estado> getEstados();
+    
+    public void save(Estado estado);
+    
+    public void delete(Estado estado);
+    
+    public Estado getEstado(Estado estado);
 }

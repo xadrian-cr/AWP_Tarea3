@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="estado")
+@Table(name = "estado")
 public class Estado implements Serializable {
     
     //Para utilizarlo en la generacion de la llave primaria autoincremental 
@@ -27,7 +27,6 @@ public class Estado implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Long idEstado;
     
     String pais;
