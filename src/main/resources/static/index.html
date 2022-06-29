@@ -10,5 +10,9 @@
     </head>
     <body>
         <p> Prueba </p>
+        
+        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        
+        <div th:if="${clientes != null and !clientes.empty}">
     </body>
 </html>
