@@ -4,15 +4,34 @@
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Tarea 3</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+
     <body>
-        <p> Prueba </p>
-        
-        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
-        
+        <header/>
+        <h2> Nuestros clientes</h2>
+
         <div th:if="${estados != null and !estados.empty}">
+            
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>pais</th>
+                        <th>cantidadProvincias</th>
+                        <th>capital</th>
+                        <th>poblacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estado : ${estados}">
+                        <td th:text="${estado.pais}"></td>
+                        <td th:text="${estado.cantidadProvincias}"></td>
+                        <td th:text="${estado.capital}"></td>
+                        <td th:text="${estado.poblacion}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
